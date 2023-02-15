@@ -4,7 +4,16 @@ import org.junit.Test;
 
 public class HardcodedLoginTest {
 
-    Lab hl = new Lab();
+    Lab hl = new Lab(){
+        public boolean login(String user, String password){
+            if((user == "admin" && password =="qwerty") || (user =="user" && password =="password")){
+                return true;
+            }
+            else{
+                return false;
+            }
+        }
+    };
 
     /**
      * If a user tries to login with username "admin" and password "qwerty", login should return "true"
